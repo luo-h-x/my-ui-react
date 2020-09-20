@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react'
+import Button from './components/button/Button'
+import Message from './components/message/Message'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  handle = () => {
+    Message.warning({content:'ok'})
+  }
+  handle1 = () => {
+    Message.success({content:'ok'})
+  }
+  handle2 = () => {
+    Message.info({content:'ok'})
+  }
+  handle3 = () => {
+    Message.error({content:'ok'})
+  }
+
+  public render() {
+    return(
+      <div className = "App" >
+        <Button onClick={this.handle} type="primary">按钮</Button>
+        <Button onClick={this.handle1} type="primary">按钮</Button>
+        <Button onClick={this.handle2} type="primary">按钮</Button>
+        <Button onClick={this.handle3} type="primary">按钮</Button>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
